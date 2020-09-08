@@ -1,5 +1,16 @@
 body{
     font-family: 'Inter', sans-serif;
+    background-color:#F3F2F0;
+}
+.dark{
+    background-color: #232326;
+    color: #F3F2F0;
+}
+
+.wrapper{
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px;
 }
 
 .name{
@@ -10,3 +21,19 @@ body{
     font-size: 74px;
     text-transform: uppercase;
 }
+
+.photo{
+    margin-bottom: 120px;
+    width: 100%;
+}
+
+.nav-link{
+    text-decoration: none;
+    color: #F3F2F0;
+    font-size: 14px;
+}
+
+.nav-link:hover{
+    color:#D40000;
+}
+
