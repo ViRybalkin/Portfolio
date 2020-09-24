@@ -15,6 +15,14 @@ body{
     fill: #D40000;
 }
 
+.dark .circle-tarif{
+    fill: #D40000;
+}
+
+.dark .circle-price{
+    fill: #D40000;
+}
+
 .dark .triangle path{
     fill: #fff;
 }
@@ -42,6 +50,14 @@ body{
 .light .circle circle{
     fill: #FFFFFF;
 
+}
+
+.light .circle-tarif{
+    fill: #D40000;
+}
+
+.light .circle-price{
+    fill: #D40000;
 }
 
 .light .triangle path{
@@ -290,6 +306,23 @@ header{
     right: 38px;
     top: calc(50% - 60px);
 }
+
+.circle-tarif{
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    top: calc(50% - 20px);
+    left: -71px;
+}
+
+.circle-price{
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    top: calc(50% - 45px);
+    left: -33px;
+}
+
 .section-about{
     padding-top: 108px;
 }
@@ -491,7 +524,7 @@ opacity: 0.8;
     grid-gap: 81px 20px;;
     border-top: 1px solid #F3F2F0;
     padding-top: 80px;
-    margin-top: 79px;
+    margin-top: 81px;
 }
 
 .advantages-item{
@@ -523,6 +556,11 @@ opacity: 0.8;
     line-height: 150%;
     opacity: 0.8;
     margin-top: 0;
+}
+
+.section-tech{
+    margin-top: 180px;
+
 }
 
 .tech{
@@ -583,13 +621,24 @@ opacity: 0.8;
     border-bottom: 10px solid #E31B1B;
 }
 
+.section-tarif{
+    padding-top: 150px;
+}
+
 .tarif{
     display: grid;
-    grid-template: repeat(4,1fr)/1fr 1fr;
+    grid-template-columns: 1fr 1fr;
 }
 
 .tarif-item{
     border-bottom: 1px solid #F3F2F0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 33px;
+    height: 267px;
+    padding-bottom: 64px;
+
 }
 
 .tarif-title{
@@ -597,8 +646,17 @@ opacity: 0.8;
     line-height: 150%;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.03em;
+    letter-spacing: 0.03em; 
+    border-bottom: 1px solid #F3F2F0;
+}
 
+.tarif-title > div{
+    position: relative;
+}
+
+.tarif-title p{
+    position: relative;
+    z-index: 1;
 }
 
 .tarif-description{
@@ -606,11 +664,16 @@ opacity: 0.8;
     font-size: 28px;
     line-height: 150%;
     opacity: 0.8;
+    border-bottom: 1px solid #F3F2F0;
+    padding-bottom: 50px;
+    padding-left: 10px;
 }
 
 .tarif-name{
     font-size: 28px;
     line-height: 150%;
+    margin-bottom: 20px;
+    margin-top: 28px;
 }
 
 .tarif-text{
@@ -621,31 +684,37 @@ opacity: 0.8;
 
 .tarif .project{
     display: inline-flex;
+    margin-top: 50px;
 }
 
 .tarif-pack{
     font-size: 16px;
     line-height: 150%;
     font-weight: 700;
+    margin-top: 28px;
+    margin-bottom: 28px;
+    margin-left: 10px;
 }
 
 .tarif-list{
     list-style-type: none;
-    padding-left: 0;
+    padding-left: 12px;
     margin: 0;
-
+    margin-bottom: 49px
 }
 
 .tarif-list-item{
     position: relative;
-    padding-left: 30px;
-    margin-bottom: 10px;
+    padding-left: 14px;
+    margin-bottom: 13px;
+    font-size: 16px;
 }
 
 .tarif-price{
     font-weight: 700;
     font-size: 42px;
     line-height: 150%;
+    padding-left: 10px;
 }
 
 .tarif-list-item::before{
@@ -659,3 +728,14 @@ opacity: 0.8;
     left: 0;
     top: calc(50% - 2px);
 }
+
+.tarif-footer{
+    position: relative;
+}
+
+.tarif-footer p{
+    position: relative;
+    z-index: 1;
+    margin: 0;
+}
+
