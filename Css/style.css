@@ -93,7 +93,10 @@ body{
     border-left: 1px solid rgba(243, 242, 240, 0.3);
 }
 
-.dark .html,.css,.JavaScript,.Jquery{
+.dark .html,
+.dark .css,
+.dark .JavaScript,
+.dark .Jquery{
     border-top: 1px solid rgba(243, 242, 240, 0.3);
 }
 
@@ -179,7 +182,10 @@ body{
     border-left: 1px solid rgba(1, 1, 1, 1);
 }
 
-.light .html,.css,.JavaScript,.Jquery{
+.light .html,
+.light .css,
+.light .JavaScript,
+.light .Jquery{
     border-top: 1px solid rgba(1, 1, 1, 1);
 }
 
