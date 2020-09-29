@@ -35,15 +35,84 @@ body{
     fill: #fff;
 }
 
-.dark .social,
-.dark .steps-item,
-.dark .about-title,
-.dark .about-description{
+.dark .nav-info .nav-item::before,
+.dark .nav-social .nav-item::before{
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 24px;
+    background:rgba(243, 242, 240, 0.5);
+    display: block;
+    left: 0;
+    top: calc(50% - 12px);
+}
+
+.dark .gradient{
+    background: linear-gradient(180deg, #141416 0%, rgba(20, 20, 22, 0) 100%);
+}
+
+.dark .nav-tabs-link{
+    border-bottom: 1px solid transparent;
+    padding-bottom: 21px;
+    color: rgba(243, 242, 240, 0.5);
+    text-decoration: none;
+}
+
+.dark .nav-tabs-item.ui-state-active .nav-tabs-link{
+    color: #F3F2F0;
     border-bottom: 1px solid #F3F2F0;
 }
 
-.dark .steps-item:first-child{
+.dark .social,
+.dark .steps-item,
+.dark .about-title,
+.dark .about-description,
+.dark .work,
+.dark .tarif-item,
+.dark .tarif-description,
+.dark .tarif-title{
+    border-bottom: 1px solid #F3F2F0;
+}
+
+.dark .steps-item:first-child,
+.dark .advantages,
+.dark .form-item,
+.dark .form-social,
+.dark .footer,
+.dark .footer-top{
     border-top: 1px solid #F3F2F0;
+}
+
+.dark .tech-item{
+    border-bottom: 1px solid rgba(243, 242, 240, 0.3);
+    border-right: 1px solid rgba(243, 242, 240, 0.3);
+}
+
+.dark .tech-item:first-child,
+.dark .tech-item:nth-child(5){
+    border-left: 1px solid rgba(243, 242, 240, 0.3);
+}
+
+.dark .html,.css,.JavaScript,.Jquery{
+    border-top: 1px solid rgba(243, 242, 240, 0.3);
+}
+
+.dark .footer-bottom p{
+    color: rgba(243, 242, 240, 0.5);
+}
+
+.dark .footer-link{
+    color: rgba(243, 242, 240, 0.3);
+    border-bottom: 1px solid rgba(243, 242, 240, 0.3);
+}
+
+.dark .footer-link:hover{
+    color: rgba(243, 242, 240,1);
+    border-bottom: 1px solid rgba(243, 242, 240, 1);
+}
+
+.dark .advantages-image path{
+    fill: #F3F2F0;
 }
 
 .light{
@@ -73,23 +142,94 @@ body{
 }
 
 .light .triangle path{
-    fill: #FFFFFF;
+    fill:  #D40000;
 }
 
 .light .triangle-form path{
-    fill: #FFFFFF;
+    fill:  #D40000;
 }
 
 .light .social,
 .light .steps-item,
 .light .about-title,
-.light .about-description{
+.light .about-description,
+.light .work,
+.light .tarif-item,
+.light .tarif-description,
+.light .tarif-title{
     border-bottom: 1px solid #010101;
 }
 
-.light .steps-item:first-child{
+.light .steps-item:first-child,
+.light .advantages,
+.light .form-item,
+.light .form-social,
+.light .footer,
+.light .footer-top{
     border-top: 1px solid #010101;
 }
+
+.light .tech-item{
+    border-bottom: 1px solid rgba(1, 1, 1, 1);
+    border-right: 1px solid rgba(1, 1, 1, 1);
+}
+
+.light .tech-item:first-child,
+.light .tech-item:nth-child(5){
+    border-left: 1px solid rgba(1, 1, 1, 1);
+}
+
+.light .html,.css,.JavaScript,.Jquery{
+    border-top: 1px solid rgba(1, 1, 1, 1);
+}
+
+.light .nav-info .nav-item::before,
+.light .social-item .nav-item::before,
+.light .form-social .nav-item::before{
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 24px;
+    background:rgba(1, 1, 1, 0.2);
+    display: block;
+    left: 0;
+    top: calc(50% - 12px);
+}
+
+.light .gradient{
+    background: linear-gradient(180deg, #E7E6E6 0%, rgba(231, 230, 230, 0) 100%);
+}
+
+.light .nav-tabs-link{
+    border-bottom: 1px solid transparent;
+    padding-bottom: 21px;
+    color: rgba(1, 1, 1, 0.4);
+    text-decoration: none;
+}
+
+.light .nav-tabs-item.ui-state-active .nav-tabs-link{
+    color: #010101;
+    border-bottom: 1px solid #010101;
+}
+
+.light .footer-bottom p{
+    color: rgba(1, 1, 1, 0.3);
+}
+
+.light .footer-link{
+    color: rgba(1, 1, 1, 0.3);
+    border-bottom: 1px solid rgba(1, 1, 1, 0.3);
+}
+
+.light .footer-link:hover{
+    color: rgba(1, 1, 1,1);
+    border-bottom: 1px solid rgba(1, 1, 1, 1);
+}
+
+.light .advantages-image path{
+    fill: #010101;
+}
+
 
 .wrapper{
     max-width: 1140px;
@@ -126,8 +266,21 @@ body{
 }
 
 .photo{
+    position: relative;
+    overflow: hidden;
+    height: 310px;
     margin-bottom: 93px;
     width: 100%;
+}
+
+.photo img{
+    position: absolute;
+    height: 310px;
+    width: 100%;
+    left: -50%;
+    top: -50%;
+    transform: translate(50%,50%);
+    object-fit: cover  ;
 }
 
 header{
@@ -170,34 +323,12 @@ header{
     position: relative;
 }
 
-.nav-info .nav-item::before{
-    content: '';
-    position: absolute;
-    width: 1px;
-    height: 24px;
-    background:rgba(243, 242, 240, 0.5);
-    display: block;
-    left: 0;
-    top: calc(50% - 12px);
-}
-
 .nav-info .nav-item:first-child::before{
     display: none;
 }
 
 .nav-social .nav-item{
     position: relative;
-}
-
-.nav-social .nav-item::before{
-    content: '';
-    position: absolute;
-    width: 1px;
-    height: 24px;
-    background:rgba(243, 242, 240, 0.5);
-    display: block;
-    left: 0;
-    top: calc(50% - 12px);
 }
 
 .nav-social .nav-item:first-child::before{
@@ -253,12 +384,14 @@ header{
 
 .skill{
     display: flex;
+    flex-wrap: wrap;
     padding-top: 47px;
 }
 
 .skill-item{
     flex: 0 0 22%;
     margin-right: 3%;
+
 }
 
 .skill .title-h3{
@@ -287,6 +420,7 @@ header{
 
 .steps-title{
     font-size: 28px;
+    line-height: 150%;
 }
 
 .steps-title span{
@@ -360,7 +494,7 @@ header{
 
 .about{
     display: grid;
-    grid-template:290px/repeat(4,1fr);
+    grid-template-columns: repeat(4, 1fr);
 }
 
 .about-title{
@@ -429,9 +563,9 @@ opacity: 0.8;
     z-index: 1;
 }
 
-.gradient{
+/* .gradient{
     background: linear-gradient(180deg, #141416 0%, rgba(20, 20, 22, 0) 100%);
-}
+} */
 
 .section-portfolio{
     position: relative;
@@ -465,17 +599,17 @@ opacity: 0.8;
     padding-bottom: 21px;
 }
 
-.nav-tabs-link{
+/* .nav-tabs-link{
     border-bottom: 1px solid transparent;
     padding-bottom: 21px;
     color: rgba(243, 242, 240, 0.5);
     text-decoration: none;
-}
+} */
 
-.nav-tabs-item.ui-state-active .nav-tabs-link{
+/* .nav-tabs-item.ui-state-active .nav-tabs-link{
     color: #F3F2F0;
     border-bottom: 1px solid #F3F2F0;
-}
+} */
 
 .nav-tabs-link:focus{
     outline: none;
@@ -483,8 +617,8 @@ opacity: 0.8;
 
 .work{
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
-    border-bottom: 1px solid #F3F2F0;
     padding-top: 60px;
     padding-bottom:60px;
 }
@@ -572,9 +706,9 @@ opacity: 0.8;
     width: 40px;
 }
 
-.advantages-image path{
+/* .advantages-image path{
     fill: #F3F2F0;
-}
+} */
 
 .advantages .title-h3{
     margin-top: 0;
@@ -601,19 +735,8 @@ opacity: 0.8;
 }
 
 .tech-item{
-    border-bottom: 1px solid rgba(243, 242, 240, 0.3);
-    border-right: 1px solid rgba(243, 242, 240, 0.3);
     display: flex;
     justify-content: center;
-}
-
-.tech-item:first-child,
-.tech-item:nth-child(5){
-    border-left: 1px solid rgba(243, 242, 240, 0.3);
-}
-
-.html,.css,.JavaScript,.Jquery{
-    border-top: 1px solid rgba(243, 242, 240, 0.3);
 }
 
 .tech-image{
@@ -623,6 +746,10 @@ opacity: 0.8;
 
 .tech-item:hover .tech-image{
     filter: grayscale(0);
+}
+
+.Jquery .tech-image{
+    width: 72px;
 }
 
 .ui-tooltip{
@@ -662,7 +789,6 @@ opacity: 0.8;
 }
 
 .tarif-item{
-    border-bottom: 1px solid #F3F2F0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -673,12 +799,12 @@ opacity: 0.8;
 }
 
 .tarif-title{
+    position: relative;
     font-size: 28px;
     line-height: 150%;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.03em; 
-    border-bottom: 1px solid #F3F2F0;
 }
 
 .tarif-title > div{
@@ -695,9 +821,12 @@ opacity: 0.8;
     font-size: 28px;
     line-height: 150%;
     opacity: 0.8;
-    border-bottom: 1px solid #F3F2F0;
     padding-bottom: 50px;
     padding-left: 10px;
+}
+
+.tarif-header{
+    padding-right: 15px;
 }
 
 .tarif-name{
@@ -788,11 +917,11 @@ section.section-form {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.03em; 
-    border-bottom: 1px solid #F3F2F0;
 }
 
 .form-title p{
     position: relative;
+    z-index: 1;
 }
 
 .form-description{
@@ -800,7 +929,6 @@ section.section-form {
     font-size: 28px;
     line-height: 150%;
     opacity: 0.8;
-    border-bottom: 1px solid #F3F2F0;
     padding-bottom: 31px;
     padding-left: 10px;
 }
@@ -813,13 +941,14 @@ section.section-form {
 
 .form-item {
     padding-top: 59px;
-    margin-left: 10px;
+    padding-left: 10px;
 }
 
 .form-social{
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    z-index: 1;
 }
 
 form label{
@@ -850,6 +979,12 @@ form label{
     color: #F3F2F0;
     padding: 20px 0;
     margin-bottom: 0;
+    transition: 0.2s ease;
+}
+
+.form input[type=submit]:hover{
+    background: #EA0E00;
+    cursor: pointer;
 }
 
 form select{
@@ -888,15 +1023,13 @@ form select{
 .footer-top{
     display: flex;
     justify-content: space-between;
-    padding-top: 93px;
+    padding-top: 66px;
+    margin-top: 28px;
+    flex-wrap: wrap;
 }
 
 .form .nav-social .nav-item:first-child{
     padding-left: 0px;
-}
-
-.footer{
-    border-top: 1px solid #F3F2F0;
 }
 
 .footer-bottom{
@@ -904,23 +1037,482 @@ form select{
     justify-content: space-between;
     padding-top: 42px;
     padding-bottom: 44px;
+    flex-wrap: wrap;
 }
 
 .footer-bottom p{
     line-height: 150%;
     font-size: 12px;
     margin: 0;
-    color: rgba(243, 242, 240, 0.5);
 }
 
 .footer-link{
-    color: rgba(243, 242, 240, 0.3);
-    border-bottom: 1px solid rgba(243, 242, 240, 0.3);
     transition: 0.2s ease;
     text-decoration: none;
 }
 
-.footer-link:hover{
-    color: rgba(243, 242, 240,1);
-    border-bottom: 1px solid rgba(243, 242, 240, 1);
+@media(min-width: 901px){
+    .header-mobile{
+        display: none;
+    }
 }
+
+@media(max-width: 900px){
+    header{
+        display: none;
+    }
+    .header-mobile{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    .menu{
+        background: transparent;
+        border: none;
+    }
+    .triangle {
+        left: 0px;
+        top: inherit;
+        bottom: -80px;
+        width: 48px;
+    }
+    .circle-main {
+        width: 200px;
+        height: 200px;
+        top: calc(50% - 100px);
+        left: -100px;
+    }
+    .social {
+        margin-top: 145px;
+    }
+    .main .title-h1{
+        margin-top: 18px;
+    }
+    .title-h1{
+        font-size: 40px;
+    }
+    .name{
+        font-size: 20px;
+    }
+    .skill{
+        justify-content: space-between;
+    }
+    .skill-item{
+        flex: 0 0 40%;
+        margin-right: 3%;
+        padding-bottom: 16px;
+    }
+    .about{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .about-description {
+        grid-column: 1/3;
+        grid-row: 2/3;
+    }
+    .about-01 {
+        grid-column: 1/2;
+        grid-row: 3/4;
+    }
+    .about-02 {
+        grid-column: 2/3;
+        grid-row: 3/5;
+    }
+    .about-03 {
+        grid-column: 1/2;
+        grid-row: 4/5;
+    }
+    .about-04 {
+        grid-column: 2/3;
+        grid-row: 4/5;
+    }
+    .steps-title {
+        font-size: 20px;
+        padding-right: 25px;
+        line-height: 150%;
+    }
+    .nav-tabs {
+        justify-content: space-around;
+        width: 100%;
+    }
+    .nav-tabs-item {
+        margin-right: 0;
+    }
+    .ui-helper-clearfix:before, .ui-helper-clearfix:after {
+        display: none;
+    }
+    .circle-portfolio {
+        width: 465px;
+        height: 465px;
+        top: -341px;
+        left: inherit;
+        right: 29px;
+    }
+    .work{
+        padding-bottom: 0;
+    }
+    .work-item {
+        flex: 0 0 100%;
+        padding-bottom: 56px;
+    }
+    .advantages{
+        grid-template-columns: 1fr 1fr;
+    }
+    .tarif-title {
+        grid-column:1/3 ;
+        grid-row:1/2 ;
+        border-bottom: none !important;
+    }
+    .tarif-description{
+        grid-column:1/3 ;
+        grid-row:2/3 ;
+    }
+    .circle-tarif {
+        width: 250px;
+        height: 250px;
+        top: calc(50% - 65px);
+        left: -152px;
+    }
+    .form {
+        grid-template-columns: 1fr;
+    }
+    .form-item{
+        grid-column:1/2 ;
+        grid-row:3/4 ;  
+    }
+    .form-social{
+        grid-row:4/5 ; 
+        border-top: none!important;
+        align-items: center;
+    }
+    .form-title{
+        grid-column:1/2 ;
+        grid-row:1/2 ;
+    }
+    .form-description{
+        position: relative;
+        z-index: 1;
+        grid-column:1/2 ;
+        grid-row:2/3 ;  
+    }
+    .form-title p {
+        position: relative;
+        z-index: 1;
+    }
+    .circle-form {
+        top: calc(50% - 129px);
+        left: -153px;
+    }
+    .triangle-form {
+        bottom: inherit;
+        top: -54px;
+        left: 92px;
+        width: 36px;
+    }
+    .footer-top{
+        flex-direction: column-reverse;
+    }
+    .footer-top .nav,
+    .footer-bottom>p{
+        flex-basis: 100%;
+    }
+    .footer-top .nav{
+        display: flex;
+        justify-content: space-between;
+    }
+    .footer-top .nav-info{
+        justify-content: center;
+        padding-bottom: 30px;
+    }
+    .footer-bottom>p{
+        text-align: center;
+        padding-bottom: 20px;
+    }
+}
+@media(max-width:600px){
+    .tech-image,.Jquery .tech-image{
+        width: 50px;
+    }
+    .tech {
+        grid-template: repeat(2,120px)/repeat(4,1fr);
+    }
+    .advantages{
+        grid-template-columns: 1fr;
+    }
+    .steps-item {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .steps-description {
+        font-size: 16px;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .steps-title {
+        padding-right: 0;
+        margin-bottom: 0px;
+    }
+    .steps-title span {
+        margin-right: 20px;
+    }
+    .tarif{
+        grid-template-columns: 1fr;
+    }
+    .tarif-item{
+        grid-column: 1/2;
+        height: inherit;
+    }
+    .tarif-left{
+        border-bottom:none!important ;
+        padding-bottom: 0;
+    }
+    .circle-price{
+        top: 0;
+    }
+    .title-h1{
+        font-size: 40px;
+    }
+    .name{
+        font-size: 18px;
+    }
+    .main .title-h1 {
+    margin-top: 18px;
+    }
+}
+@media(max-width:550px){
+    .header-mobile {
+        padding-bottom: 40px;
+    }
+    .photo,
+    .photo img{
+        height: 215px;
+        margin-bottom: 63px;
+    }
+    .main .title-h1 {
+        margin-top: 22px;
+    }
+    .title-h1 {
+        font-size: 28px;
+        line-height: 34px;
+  
+    }
+    .circle-main {
+        width: 135px;
+        height: 135px;
+        top: calc(50% - 67px);
+        left: -54px;
+    }
+    .triangle {
+        bottom: -72px;
+        width: 30px;
+    }
+    .circle-social {
+        width: 60px;
+        height: 60px;
+        position: absolute;
+        right: 38px;
+        top: calc(50% - 30px);
+    }    
+    .social {
+        margin-top: 100px;
+        padding-bottom: 32px;
+    }
+    .skill {
+        padding-top: 30px;
+    }
+    .skill .title-h3 {    
+    margin-bottom: 14px;
+    }
+    .section-about {
+        padding-top: 0px;
+    }
+    .about-item>p {
+        margin-bottom: 3px;
+        margin-top: 0;
+    }
+    .about-title{
+        border-bottom: none!important;
+        padding-bottom: 0;
+        padding-top: 60px;
+    }
+    .section-steps {
+        padding-top: 39px;
+        padding-bottom: 60px;
+    }
+    .steps-item {
+        padding: 0px 0;
+    }
+    .about-description {
+        padding: 15px 10px 62px 0px;
+    }
+    .about-01 {
+        padding: 30px 20px 36px 0px;
+    }
+    .about-02 {
+        padding: 32px 10px 35px 1px;
+    }
+    .about-03 {
+        padding: 0px 10px 35px 0px;
+    }
+    .about-04 {
+        padding: 0px 10px 15px 0px;
+    }
+    .project,
+    .nav-social .nav-link,
+    .title-h3,
+    .steps-description,
+    .work-list,
+    .work-time,
+    .advantages-desription,
+    .tarif-pack,
+    .tarif-list,
+    .form input[type=submit]{
+        font-size: 12px;
+    }
+    .skill,
+    .about-item,
+    .nav-tabs,
+    .tarif-text,
+    form input,
+    .form-item,
+    .footer-bottom{
+        font-size: 10px;
+    }
+    .about-title,
+    .about-description,
+    .steps-title,
+    .work-title,
+    .advantages-text,
+    .tarif-title,
+    .tarif-description,
+    .tarif-name,
+    .form-title,
+    .form-description{
+        font-size: 16px;
+    }
+    .tarif-price{
+        font-size: 22px;
+    }
+    .footer-top.nav-info,{
+        font-size: 14px;
+    }
+    .circle-portfolio {
+        width: 197px;
+        height: 197px;
+        top: -140px;
+        right: 122px;
+    }
+    .nav-tabs{
+        justify-content: space-between;
+        width: 100%;
+        top: -53px;
+    }
+    .portfolio {
+        margin-bottom: 68px;
+    }    
+    .tech-image, .Jquery .tech-image {
+        width: 35px;
+    }
+    .work {
+        padding-top: 0;
+    }
+    .work-title {
+        margin-bottom: 18px;
+    }
+    .work-list {
+        margin-bottom: 22px;
+    }
+    .work-image,
+    .work-thumb {
+        height: 190px;
+    }
+    .work-item {
+        padding-bottom: 39px;
+    }
+    .section-advantages {
+        padding-top: 65px;
+    }
+    .advantages {
+        padding-top: 38px;
+        margin-top: 64px;  
+        grid-gap: 49px 20px
+    }
+    .advantages-image {
+        margin-right: 39px;
+        padding-top: 14px;
+    }
+    .advantages-image svg {
+        height: 30px;
+        width: 30px;
+    } 
+    .section-tech {
+        margin-top: 77px;
+    }
+    .tech {
+        grid-template: repeat(2,44px)/repeat(4,1fr);
+    }
+    .section-tarif {
+        padding-top: 66px;
+    }
+    .circle-tarif {
+        width: 138px;
+        height: 138px;
+        top: calc(50% - 43px);
+        left: -87px;
+    }
+    .tarif-description {
+        margin-top: -15px;
+        padding-bottom: 37px;
+        padding-left: 0px;
+    }
+    .tarif-item {
+        padding-bottom: 10px;
+    }
+    .circle-form {
+        top: calc(50% - 77px);
+        left: -51px;
+        width: 190px;
+        height: 190px;
+    }
+    .triangle-form {
+        bottom: inherit;
+        top: -50px;
+        left: 96px;
+        width: 28px;
+    }
+    .form-description {
+        padding-bottom: 25px;
+    }
+    .form-item {
+        padding-top: 38px;
+        padding-left: 0px;
+    }
+    .form input {
+        margin-bottom: 5px;
+    }
+    .ui-selectmenu-button.ui-button {
+        margin-bottom: 14px;
+    }
+    section.section-form {
+        padding-top: 92px;
+        padding-bottom: 57px;
+        z-index: 5;
+    }
+    .footer-top {
+        padding-top: 45px;
+        margin-top: 28px;
+    }
+    .footer-top {
+        padding-top: 45px;
+    }
+    .footer-bottom>p {
+        padding-bottom: 13px;
+    }
+        .footer-bottom {
+            padding-top: 28px;
+        }
+}
+
