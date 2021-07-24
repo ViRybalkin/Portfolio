@@ -10,7 +10,7 @@
 	<link rel="stylesheet" href="Css/style.css">
 </head>
 <body>
-	<div class="dark">
+	<div class="current-color dark">
 		<div class="wrapper">
 			<header>
 				<nav>
@@ -21,7 +21,9 @@
 						<li class="nav-item"><a class="nav-link" href="#">Цены</a></li>
 						<li class="nav-item"><a class="nav-link" href="#">Обратная связь</a></li>
 					</ul>
+					
 				</nav>
+				<button class="change">ChangeColor</button>
 					<ul class="nav nav-info">
 						<li class="nav-item"><a class="nav-link" href="tel:+79237777777">8 923 777-77-77</a></li>
 						<li class="nav-item"><a class="nav-link" href="mailto:alexdev@gmail.com">alexdev@gmail.com</a></li>
@@ -29,6 +31,7 @@
 			</header>
 			<div class="header-mobile">
 				<a class="nav-link" href="tel:+79237777777">8 923 777-77-77</a>
+				<button class="change">ChangeColor</button>
 				<button id="opener" class="menu"><img src="./Image/icons/menu.svg" alt="menu"></button>
 			</div>
 			<div class="photo"><img  src="Image/photo.png" alt="photo"></div>
@@ -543,6 +546,14 @@
 		collision: "none"
 		}
 		});
+
+		[...document.querySelectorAll('.change')].forEach(el =>{
+		el.addEventListener('click',(e)=>{
+			e.preventDefault()
+			document.querySelector('.current-color').classList.toggle('light')
+		})
+
+		})
 		</script>
 </body>
 </html>
